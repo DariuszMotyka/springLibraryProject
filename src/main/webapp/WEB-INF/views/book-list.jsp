@@ -11,7 +11,7 @@
     <table class="table table-dark">
         <tr>
             <th>
-
+                <a href="http://localhost:8280/index.jsp">Back to Main Menu</a>
             </th>
             <td>
                 <button type="submit" class="btn btn-primary" name="action" value="add">Add</button>

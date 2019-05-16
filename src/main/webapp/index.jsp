@@ -1,9 +1,13 @@
 <html>
 <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
     <title>Main Menu</title>
 </head>
 <body>
-<table>
+<table class="table table-dark">
     <tbody>
     <tr>
         <td><label>Authors:</label></td>
