@@ -8,7 +8,7 @@
     <tr>
         <td><label>Authors:</label></td>
         <td>
-            <a href="http://localhost:8280/AuthorServlet">Go to Authors List</a>
+            <a href="http://localhost:8280/authors">Go to Authors List</a>
         </td>
     </tr>
 

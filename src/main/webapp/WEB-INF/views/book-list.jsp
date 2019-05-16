@@ -4,6 +4,7 @@
           rel="stylesheet">
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+    <title>Book list</title>
 </head>
 <body>
 <form action="/BooksServlet" method="post">
@@ -33,29 +34,25 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">ISBN</th>
-            <th scope="col">Category</th>
-            <th scope="col">Release date</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Birth place</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
         <div class="custom-control custom-radio">
-            <c:forEach var="b" items="${bookList}" varStatus="loop">
+            <c:forEach var="a" items="${authorList}" varStatus="loop">
                 <tr>
-                    <th scope="row">${b.id}</th>
+                    <th scope="row">${a.id}</th>
 
-                    <td>${b.title}</td>
-                    <td>${b.author.firstName} ${b.author.lastName}</td>
-                    <td>${b.isbn}</td>
-                    <td>${b.category}</td>
-                    <td>${b.release}</td>
+                    <td>${a.firstName}</td>
+                    <td>${a.lastName}</td>
+                    <td>${a.birth_place}</td>
 
                     <td>
                         <div class="action-group-checkbox">
-                            <input type="radio" name="bookId" value="${b.id}" checked>
+                            <input type="radio" name="bookId" value="${a.id}" checked>
                         </div>
                     </td>
                 </tr>
