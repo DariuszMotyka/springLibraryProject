@@ -34,25 +34,29 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">First name</th>
-            <th scope="col">Last name</th>
-            <th scope="col">Birth place</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Category</th>
+            <th scope="col">Release date</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
         <div class="custom-control custom-radio">
-            <c:forEach var="a" items="${authorList}" varStatus="loop">
+            <c:forEach var="b" items="${bookList}" varStatus="loop">
                 <tr>
-                    <th scope="row">${a.id}</th>
+                    <th scope="row">${b.id}</th>
 
-                    <td>${a.firstName}</td>
-                    <td>${a.lastName}</td>
-                    <td>${a.birth_place}</td>
+                    <td>${b.title}</td>
+                    <td>${b.author.firstName} ${b.author.lastName}</td>
+                    <td>${b.isbn}</td>
+                    <td>${b.category}</td>
+                    <td>${b.release}</td>
 
                     <td>
                         <div class="action-group-checkbox">
-                            <input type="radio" name="bookId" value="${a.id}" checked>
+                            <input type="radio" name="bookId" value="${b.id}" checked>
                         </div>
                     </td>
                 </tr>
