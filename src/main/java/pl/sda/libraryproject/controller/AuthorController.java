@@ -4,6 +4,7 @@ package pl.sda.libraryproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.sda.libraryproject.model.Author;
@@ -25,6 +26,17 @@ public class AuthorController {
     public String getAuthorList(Model model){
         List<Author> authorList = authorService.getAllAuthor();
         model.addAttribute("authorList",authorList);
+        return "author-list";
+    }
+
+    @RequestMapping(value =  "/authorAddForm")
+    public String showFormForAdd(){
+        return "author-add";
+    }
+
+    @RequestMapping(value = "/saveAuthor")
+    public String saveAuthor(@ModelAttribute("authorAttribute") Author theAuthor){
+        authorService.saveAuthor(theAuthor);
         return "author-list";
     }
 }

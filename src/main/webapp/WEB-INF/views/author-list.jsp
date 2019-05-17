@@ -7,7 +7,7 @@
     <title>Author list</title>
 </head>
 <body>
-<form action="/AuthorServlet" method="post">
+<form action="authorAddForm" method="post">
     <table class="table table-dark">
         <tr>
             <th>

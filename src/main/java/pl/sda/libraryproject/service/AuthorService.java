@@ -20,4 +20,8 @@ public class AuthorService {
     public List<Author> getAllAuthor(){
         return authorRepository.findAll();
     }
+
+    public void saveAuthor(Author author){
+        authorRepository.save(author);
+    }
 }
