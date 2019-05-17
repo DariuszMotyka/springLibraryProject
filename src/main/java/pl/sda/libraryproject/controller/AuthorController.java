@@ -4,13 +4,12 @@ package pl.sda.libraryproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.sda.libraryproject.model.Author;
 import pl.sda.libraryproject.service.AuthorService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AuthorController {
@@ -31,6 +30,13 @@ public class AuthorController {
 
     @RequestMapping(value =  "/authorAddForm")
     public String showFormForAdd(){
+        return "author-add";
+    }
+
+    @RequestMapping(value = "/authorEditForm", method = RequestMethod.GET)
+    public String showFormForEdit(@RequestAttribute("authorId") long authorId, Model model){
+        Optional<Author> author = authorService.getAuthorById(authorId);
+        model.addAttribute("authorAttribute",author);
         return "author-add";
     }
 

@@ -6,6 +6,7 @@ import pl.sda.libraryproject.model.Author;
 import pl.sda.libraryproject.repository.AuthorRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService {
@@ -19,6 +20,10 @@ public class AuthorService {
 
     public List<Author> getAllAuthor(){
         return authorRepository.findAll();
+    }
+
+    public Optional<Author> getAuthorById(long authorId){
+        return authorRepository.findById(authorId);
     }
 
     public void saveAuthor(Author author){

@@ -7,17 +7,17 @@
     <title>Author list</title>
 </head>
 <body>
-<form action="authorAddForm" method="post">
+<!--<form action="authorAddForm" method="post">-->
     <table class="table table-dark">
         <tr>
             <th>
                 <a href="http://localhost:8280/index.jsp">Back to Main Menu</a>
             </th>
             <td>
-                <button type="submit" class="btn btn-primary" name="action" value="add">Add</button>
+                <a href="/authorAddForm"><button type="submit" class="btn btn-primary" name="action" value="add">Add</button></a>
             </td>
             <td>
-                <button type="submit" class="btn btn-primary" name="action" value="edit">Edit</button>
+                <a href="/authorEditForm"><button type="submit" class="btn btn-primary" name="action" value="edit">Edit</button></a>
             </td>
             <td>
                 <button type="submit" class="btn btn-primary" name="action" value="delete">Delete</button>
@@ -50,7 +50,7 @@
 
                     <td>
                         <div class="action-group-checkbox">
-                            <input type="radio" name="bookId" value="${a.id}" checked>
+                            <input type="radio" name="authorId" value="${a.id}" checked>
                         </div>
                     </td>
                 </tr>
@@ -59,7 +59,7 @@
 
         </tbody>
     </table>
-</form>
+<!--</form>-->
 
 </body>
 </html>
