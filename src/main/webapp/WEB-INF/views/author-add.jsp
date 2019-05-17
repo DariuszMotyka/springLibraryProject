@@ -28,13 +28,13 @@
             <tr>
                 <td></td>
                 <td>
-                    <button type="submit" value="add" class="btn btn-primary">Add</button>
+                    <a href="/authors"><button type="submit" value="add" class="btn btn-primary">Add</button></a>
                 </td>
             </tr>
         </table>
     </form>
     <center>
-        <a href="/BooksServlet"><button type="reset" class="btn btn-primary">Cancel</button></a>
+        <a href="/authors"><button type="reset" class="btn btn-primary">Cancel</button></a>
     </center>
 </div>
 </body>

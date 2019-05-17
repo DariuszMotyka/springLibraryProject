@@ -37,6 +37,9 @@ public class AuthorController {
     @RequestMapping(value = "/saveAuthor")
     public String saveAuthor(@ModelAttribute("authorAttribute") Author theAuthor){
         authorService.saveAuthor(theAuthor);
-        return "author-list";
+        return "redirect:/authors";
+
     }
+
+
 }
