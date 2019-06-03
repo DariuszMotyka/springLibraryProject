@@ -8,6 +8,7 @@
 </head>
 <body>
 <!--<form action="authorAddForm" method="post">-->
+<!--   <form action="authorDelete" method="post">-->
     <table class="table table-dark">
         <tr>
             <th>
@@ -20,7 +21,7 @@
                 <a href="/authorEditForm"><button type="submit" class="btn btn-primary" name="action" value="edit">Edit</button></a>
             </td>
             <td>
-                <button type="submit" class="btn btn-primary" name="action" value="delete">Delete</button>
+                <a href="/authorDelete"><button type="submit" class="btn btn-primary" name="action" value="delete">Delete</button></a>
             </td>
             <td>
                 <button type="submit" class="btn btn-primary" name="action" value="details">Details</button>
@@ -47,12 +48,7 @@
                     <td>${a.firstName}</td>
                     <td>${a.lastName}</td>
                     <td>${a.placeOfBirth}</td>
-
-                    <td>
-                        <div class="action-group-checkbox">
-                            <input type="radio" name="authorId" value="${a.id}" checked>
-                        </div>
-                    </td>
+                    <td><input class="form-check-input" type="radio" name="authorId" value="${a.id}" checked></td>
                 </tr>
             </c:forEach>
         </div>
@@ -60,6 +56,6 @@
         </tbody>
     </table>
 <!--</form>-->
-
+<!--</form>-->
 </body>
 </html>

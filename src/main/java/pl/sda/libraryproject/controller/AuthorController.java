@@ -21,7 +21,7 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @RequestMapping(value = "/authors",method = RequestMethod.GET)
+    @RequestMapping(value = "/authors")
     public String getAuthorList(Model model){
         List<Author> authorList = authorService.getAllAuthor();
         model.addAttribute("authorList",authorList);
@@ -38,6 +38,12 @@ public class AuthorController {
         Optional<Author> author = authorService.getAuthorById(authorId);
         model.addAttribute("authorAttribute",author);
         return "author-add";
+    }
+
+    @RequestMapping(value = "/authorDelete", method = RequestMethod.GET)
+    public String doAction(@RequestParam Long authorId) {
+        authorService.delete(authorId);
+        return "redirect:/authors";
     }
 
     @RequestMapping(value = "/saveAuthor")
